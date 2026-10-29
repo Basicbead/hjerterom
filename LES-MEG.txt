@@ -1,0 +1,28 @@
+HJERTEROM – LOKAL KJÆRLIGHETSASSISTENT
+
+Dette er en faktisk språkmodell som kjører lokalt med Ollama. Nettlesergrensesnittet sender spørsmål til Ollama på samme Mac (localhost). Spørsmål og svar sendes ikke til en ekstern AI-tjeneste, og programmet lagrer ikke samtaler.
+
+MODELL
+Assistenten bruker Gemma 3 1B via Ollama. Modellen er omtrent 806 MB og støtter mange språk. Den er liten nok til å kjøre lokalt på en vanlig Mac, men kan svare langsommere eller mindre nyansert enn store nettmodeller.
+
+FØRSTE OPPSETT
+1. Pakk ut mappen på Mac-en.
+2. Installer Ollama fra https://ollama.com/download/mac. Ollama krever macOS 14 Sonoma eller nyere. Åpne Ollama én gang.
+3. Dobbeltklikk START-ME.command. Hvis macOS blokkerer fila, høyreklikk den og velg Åpne.
+4. Første kjøring laster ned Gemma-modellen (omtrent 806 MB) og lager den tilpassede assistenten. La Terminal-vinduet stå åpent.
+5. Når nettsiden åpnes, kan du koble fra internett. Neste gang kjører modellen lokalt.
+
+SENERE BRUK
+Dobbeltklikk START-ME.command igjen. La Terminal-vinduet stå åpent mens du chatter. Stopp serveren ved å lukke Terminal-vinduet.
+
+LOKAL BRUK
+Serveren lytter bare på 127.0.0.1, altså på denne Mac-en. Den sender ikke chatter til andre maskiner. Samtaler finnes bare i nettleserfanen mens den er åpen.
+
+BEGRENSNINGER
+- Modellen er liten for å kjøre lokalt. Den kan misforstå eller gi generelle råd; bruk egen vurdering.
+- Assistenten er ikke terapeut. Hvis du er utrygg, blir kontrollert eller truet, snakk med noen du stoler på og kontakt nødhjelp der du befinner deg hvis faren er akutt.
+- Første oppsett krever internett for å laste ned Ollama og modellfilene. Etterpå kan du bruke Hjerterom offline.
+
+MODELLSIDE
+Gemma 3 via Ollama: https://ollama.com/library/gemma3
+Ollama for macOS: https://ollama.com/download/mac
