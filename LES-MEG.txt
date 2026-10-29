@@ -1,27 +1,24 @@
 HJERTEROM – LOKAL KJÆRLIGHETSASSISTENT
 
-Dette er en faktisk språkmodell som kjører lokalt med Ollama. Nettlesergrensesnittet sender spørsmål til Ollama på samme Mac (localhost). Spørsmål og svar sendes ikke til en ekstern AI-tjeneste, og programmet lagrer ikke samtaler.
+Hjerterom gir råd om kjærlighet og relasjoner med Gemma 3 1B gjennom Ollama. Spørsmål går til Ollama på samme Mac, og appen lagrer ikke samtaler.
 
-MODELL
-Assistenten bruker Gemma 3 1B via Ollama. Modellen er omtrent 806 MB og støtter mange språk. Den er liten nok til å kjøre lokalt på en vanlig Mac, men kan svare langsommere eller mindre nyansert enn store nettmodeller.
-
-FØRSTE OPPSETT
-1. Pakk ut mappen på Mac-en.
-2. Installer Ollama fra https://ollama.com/download/mac. Ollama krever macOS 14 Sonoma eller nyere. Åpne Ollama én gang.
-3. Dobbeltklikk START-ME.command. Hvis macOS blokkerer fila, høyreklikk den og velg Åpne.
-4. Første kjøring laster ned Gemma-modellen (omtrent 806 MB) og lager den tilpassede assistenten. La Terminal-vinduet stå åpent.
-5. Når nettsiden åpnes, kan du koble fra internett. Neste gang kjører modellen lokalt.
+KOM I GANG – ÉN NEDLASTING
+1. Last ned ZIP-filen fra GitHub Releases og pakk den ut.
+2. Dobbeltklikk START-ME.command. Hvis macOS spør, velg Åpne.
+3. Hvis Ollama mangler, starter fila den offisielle Ollama-installasjonen.
+4. Første gang lastes Gemma-modellen ned (omtrent 806 MB) og Hjerterom klargjøres. Dette krever internett.
+5. La Terminal-vinduet stå åpent mens du bruker Hjerterom.
 
 SENERE BRUK
-Dobbeltklikk START-ME.command igjen. La Terminal-vinduet stå åpent mens du chatter. Stopp serveren ved å lukke Terminal-vinduet.
+Dobbeltklikk START-ME.command igjen. Stopp serveren ved å lukke Terminal-vinduet.
 
 LOKAL BRUK
-Serveren lytter bare på 127.0.0.1, altså på denne Mac-en. Den sender ikke chatter til andre maskiner. Samtaler finnes bare i nettleserfanen mens den er åpen.
+Serveren lytter bare på 127.0.0.1 på denne Mac-en. Samtalene finnes bare i nettleserfanen mens den er åpen.
 
 BEGRENSNINGER
+- Krever macOS 14 Sonoma eller nyere og internett første gang. Etter oppsett kan Hjerterom brukes offline.
 - Modellen er liten for å kjøre lokalt. Den kan misforstå eller gi generelle råd; bruk egen vurdering.
-- Assistenten er ikke terapeut. Hvis du er utrygg, blir kontrollert eller truet, snakk med noen du stoler på og kontakt nødhjelp der du befinner deg hvis faren er akutt.
-- Første oppsett krever internett for å laste ned Ollama og modellfilene. Etterpå kan du bruke Hjerterom offline.
+- Assistenten er ikke terapeut. Hvis du er utrygg, fortell det til noen du stoler på og kontakt nødhjelp der du befinner deg hvis faren er akutt.
 
 MODELLSIDE
 Gemma 3 via Ollama: https://ollama.com/library/gemma3
