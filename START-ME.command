@@ -7,15 +7,27 @@ if command -v ollama >/dev/null 2>&1; then
 elif [[ -x "/Applications/Ollama.app/Contents/Resources/ollama" ]]; then
   OLLAMA_BIN="/Applications/Ollama.app/Contents/Resources/ollama"
 else
-  echo "Ollama er ikke installert på denne Mac-en."
-  echo "Installer Ollama fra https://ollama.com/download/mac og åpne appen én gang."
-  echo "Kjør deretter START-ME.command på nytt."
-  read "?Trykk Enter for å avslutte. "
-  exit 1
+  echo "Installerer Ollama fra den offisielle installasjonskilden …"
+  if ! command -v curl >/dev/null 2>&1; then
+    echo "Fant ikke curl. Installer Ollama fra https://ollama.com/download/mac og kjør fila på nytt."
+    read "?Trykk Enter for å avslutte. "
+    exit 1
+  fi
+  curl -fsSL https://ollama.com/install.sh | sh
+  if command -v ollama >/dev/null 2>&1; then
+    OLLAMA_BIN="$(command -v ollama)"
+  elif [[ -x "/Applications/Ollama.app/Contents/Resources/ollama" ]]; then
+    OLLAMA_BIN="/Applications/Ollama.app/Contents/Resources/ollama"
+  else
+    echo "Ollama-installasjonen ble ikke funnet etter installasjonen."
+    echo "Installer Ollama fra https://ollama.com/download/mac og kjør fila på nytt."
+    read "?Trykk Enter for å avslutte. "
+    exit 1
+  fi
 fi
 
 if ! curl -fsS --max-time 2 http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then
-  ("$OLLAMA_BIN" serve >/tmp/hjerterom-ollama.log 2>&1 &) 
+  ("$OLLAMA_BIN" serve >/tmp/hjerterom-ollama.log 2>&1 &)
   for i in {1..20}; do
     if curl -fsS --max-time 2 http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then break; fi
     sleep 1
